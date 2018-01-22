@@ -1,0 +1,29 @@
+{
+    "name": "jamieynonan/type-hint-reader",
+    "description": "Reader type hint for property by setter or constructor",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jamie Ynonan",
+            "email": "jamiea31@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Thr\\": "src/Thr/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Thr\\": "tests/Thr/"
+        }
+    }
+}
