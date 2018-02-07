@@ -2,48 +2,42 @@
 
 namespace Thr;
 
+/**
+ * Class OnlySetterParameters
+ * @package Thr
+ */
 class OnlySetterParameters
 {
     /**
      * @var int
      */
     private $int;
+
     /**
      * @var int
      */
     private $integer;
+
     /**
      * @var float
      */
     private $float;
-    /**
-     * @var float
-     */
-    private $double;
-    /**
-     * @var string
-     */
-    private $string;
-    /**
-     * @var bool
-     */
-    private $bool;
-    /**
-     * @var bool
-     */
-    private $boolean;
+
     /**
      * @var array
      */
     private $array;
+
     /**
      * @var object
      */
     private $object;
+
     /**
      * @var \DateTime
      */
     private $dateTime;
+
     /**
      * @var OnlySetterParameters
      */
@@ -75,38 +69,6 @@ class OnlySetterParameters
     public function setFloat(float $float): void
     {
         $this->float = $float;
-    }
-
-    /**
-     * @param float $double
-     */
-    public function setDouble(\double $double): void
-    {
-        $this->double = $double;
-    }
-
-    /**
-     * @param string $string
-     */
-    public function setString(string $string): void
-    {
-        $this->string = $string;
-    }
-
-    /**
-     * @param bool $bool
-     */
-    public function setBool(bool $bool): void
-    {
-        $this->bool = $bool;
-    }
-
-    /**
-     * @param bool $boolean
-     */
-    public function setBoolean(\boolean $boolean): void
-    {
-        $this->boolean = $boolean;
     }
 
     /**

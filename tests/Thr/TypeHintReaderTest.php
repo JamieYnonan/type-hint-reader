@@ -30,10 +30,6 @@ class TypeHintReaderTest extends TestCase
         $this->assertEquals('int', $typeReader->getTypeName('int'));
         $this->assertEquals('integer', $typeReader->getTypeName('integer'));
         $this->assertEquals('float', $typeReader->getTypeName('float'));
-        $this->assertEquals('double', $typeReader->getTypeName('double'));
-        $this->assertEquals('string', $typeReader->getTypeName('string'));
-        $this->assertEquals('bool', $typeReader->getTypeName('bool'));
-        $this->assertEquals('boolean', $typeReader->getTypeName('boolean'));
         $this->assertEquals('array', $typeReader->getTypeName('array'));
         $this->assertEquals('object', $typeReader->getTypeName('object'));
         $this->assertEquals('DateTime', $typeReader->getTypeName('dateTime'));
@@ -53,10 +49,6 @@ class TypeHintReaderTest extends TestCase
         $this->assertEquals('int', $typeReader->getTypeName('int'));
         $this->assertEquals('integer', $typeReader->getTypeName('integer'));
         $this->assertEquals('float', $typeReader->getTypeName('float'));
-        $this->assertEquals('double', $typeReader->getTypeName('double'));
-        $this->assertEquals('string', $typeReader->getTypeName('string'));
-        $this->assertEquals('bool', $typeReader->getTypeName('bool'));
-        $this->assertEquals('boolean', $typeReader->getTypeName('boolean'));
         $this->assertEquals('array', $typeReader->getTypeName('array'));
         $this->assertEquals('object', $typeReader->getTypeName('object'));
         $this->assertEquals('DateTime', $typeReader->getTypeName('dateTime'));
