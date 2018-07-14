@@ -4,57 +4,15 @@ namespace Thr;
 
 class OnlyConstructorParameters
 {
-    /**
-     * @var int
-     */
     private $int;
-
-    /**
-     * @var int
-     */
     private $integer;
-
-    /**
-     * @var float
-     */
     private $float;
-
-    /**
-     * @var array
-     */
     private $array;
-
-    /**
-     * @var object
-     */
     private $object;
-
-    /**
-     * @var \DateTime
-     */
     private $dateTime;
-
-    /**
-     * @var OnlyConstructorParameters
-     */
     private $onlyConstructorParameters;
-
-    /**
-     * @var mixed
-     */
     private $mixed;
-
-    /**
-     * OnlyConstructorParameters constructor.
-     * @param int|null $int
-     * @param int $integer
-     * @param float $float
-     * @param array $array
-     * @param object $object
-     * @param \DateTime $dateTime
-     * @param null|OnlyConstructorParameters $onlyConstructorParameters
-     * @param $mixed
-     */
+    
     private function __construct(
         ?int $int,
         \integer $integer,

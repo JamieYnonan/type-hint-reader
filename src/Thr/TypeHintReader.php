@@ -8,11 +8,7 @@ namespace Thr;
  */
 class TypeHintReader implements TypeReader
 {
-    /**
-     * @var \ReflectionClass
-     */
     private $class;
-
 
     /**
      * TypeHintReader constructor.
@@ -36,11 +32,6 @@ class TypeHintReader implements TypeReader
         return $reflectionType;
     }
 
-    /**
-     * @param string $propertyName
-     * @return \ReflectionParameter
-     * @throws TypeHintReaderException
-     */
     private function getReflectionParameter(string $propertyName): \ReflectionParameter
     {
         return $this->getReflectionPropertyBySetter($propertyName)
@@ -58,11 +49,6 @@ class TypeHintReader implements TypeReader
         return null;
     }
 
-    /**
-     * @param string $propertyName
-     * @return \ReflectionParameter
-     * @throws TypeHintReaderException
-     */
     private function getReflectionPropertyByConstruct(string $propertyName): \ReflectionParameter
     {
         $constructor = $this->class->getConstructor();

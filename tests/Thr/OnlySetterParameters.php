@@ -8,43 +8,13 @@ namespace Thr;
  */
 class OnlySetterParameters
 {
-    /**
-     * @var int
-     */
     private $int;
-
-    /**
-     * @var int
-     */
     private $integer;
-
-    /**
-     * @var float
-     */
     private $float;
-
-    /**
-     * @var array
-     */
     private $array;
-
-    /**
-     * @var object
-     */
     private $object;
-
-    /**
-     * @var \DateTime
-     */
     private $dateTime;
-
-    /**
-     * @var OnlySetterParameters
-     */
     private $onlySetterParameters;
-    /**
-     * @var mixed
-     */
     private $mixed;
 
     /**
