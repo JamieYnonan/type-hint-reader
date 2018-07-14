@@ -29,7 +29,7 @@ class TypeHintReaderTest extends TestCase
             OnlyConstructorParameters::class
         );
 
-        $this->assertEquals('int', $typeInt);
+        $this->assertEquals('int', $typeReader->getTypeName('int'));
         $this->assertEquals('integer', $typeReader->getTypeName('integer'));
         $this->assertEquals('float', $typeReader->getTypeName('float'));
         $this->assertEquals('array', $typeReader->getTypeName('array'));
