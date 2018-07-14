@@ -12,7 +12,7 @@ class OnlyConstructorParameters
     private $dateTime;
     private $onlyConstructorParameters;
     private $mixed;
-    
+
     private function __construct(
         ?int $int,
         \integer $integer,
