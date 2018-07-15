@@ -56,18 +56,26 @@ class TypeHintReader implements TypeReader
         string $propertyName
     ): \ReflectionParameter {
         $constructor = $this->class->getConstructor();
-        $parameter = end(array_filter(
-            $constructor->getParameters(),
-            function (\ReflectionParameter $parameter) use ($propertyName) {
-                return $parameter->getName() === $propertyName;
-            }
-        ));
+        $parameter = $this->getParameter($propertyName, $constructor);
 
         if ($parameter instanceof \ReflectionParameter) {
             return $parameter;
         }
 
         throw TypeHintReaderException::invalidPropertyName($propertyName);
+    }
+
+    private function getParameter(
+        string $propertyName,
+        \ReflectionMethod $constructor
+    ): ?\ReflectionParameter {
+        foreach ($constructor->getParameters() as $parameter) {
+            if ($parameter->getName() === $propertyName) {
+                return $parameter;
+            }
+        }
+
+        return null;
     }
 
     /**
