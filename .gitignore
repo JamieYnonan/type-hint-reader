@@ -6,3 +6,4 @@ vendor
 out
 gen
 composer.phar
+cache
