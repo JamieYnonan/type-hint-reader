@@ -24,7 +24,8 @@ class TypeHintReader implements TypeReader
      */
     public function getReflectionType(string $propertyName): \ReflectionType
     {
-        $reflectionType = $this->getReflectionParameter($propertyName)->getType();
+        $reflectionType = $this->getReflectionParameter($propertyName)
+            ->getType();
         if ($reflectionType === null) {
             throw TypeHintReaderException::withoutTypeHint($propertyName);
         }
@@ -32,14 +33,16 @@ class TypeHintReader implements TypeReader
         return $reflectionType;
     }
 
-    private function getReflectionParameter(string $propertyName): \ReflectionParameter
-    {
+    private function getReflectionParameter(
+        string $propertyName
+    ): \ReflectionParameter {
         return $this->getReflectionPropertyBySetter($propertyName)
             ?? $this->getReflectionPropertyByConstruct($propertyName);
     }
 
-    private function getReflectionPropertyBySetter(string $propertyName): ?\ReflectionParameter
-    {
+    private function getReflectionPropertyBySetter(
+        string $propertyName
+    ): ?\ReflectionParameter {
         $nameSetter = 'set'.ucfirst($propertyName);
         if ($this->class->hasMethod($nameSetter)) {
             $methodSetter = $this->class->getMethod($nameSetter);
@@ -49,8 +52,9 @@ class TypeHintReader implements TypeReader
         return null;
     }
 
-    private function getReflectionPropertyByConstruct(string $propertyName): \ReflectionParameter
-    {
+    private function getReflectionPropertyByConstruct(
+        string $propertyName
+    ): \ReflectionParameter {
         $constructor = $this->class->getConstructor();
         $parameter = end(array_filter(
             $constructor->getParameters(),

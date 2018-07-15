@@ -22,44 +22,64 @@ class TypeHintReaderTest extends TestCase
 
     /**
      * @test
+     * @dataProvider constructorTypesProvider
      */
-    public function getTypeByConstructor()
+    public function getTypeByConstructor(string $expected, string $propertyName)
     {
         $typeReader = TypeHintReader::byClassName(
             OnlyConstructorParameters::class
         );
 
-        $this->assertEquals('int', $typeReader->getTypeName('int'));
-        $this->assertEquals('integer', $typeReader->getTypeName('integer'));
-        $this->assertEquals('float', $typeReader->getTypeName('float'));
-        $this->assertEquals('array', $typeReader->getTypeName('array'));
-        $this->assertEquals('object', $typeReader->getTypeName('object'));
-        $this->assertEquals('DateTime', $typeReader->getTypeName('dateTime'));
-        $this->assertEquals(
-            'Thr\OnlyConstructorParameters',
-            $typeReader->getTypeName('onlyConstructorParameters')
+        $typeName = $typeReader->getTypeName($propertyName);
+        $this->assertEquals($expected, $typeName);
+    }
+
+    public function constructorTypesProvider(): array
+    {
+        $types = $this->baseTypes();
+        array_push(
+            $types,
+            ['Thr\OnlyConstructorParameters', 'onlyConstructorParameters']
         );
+
+        return $types;
+    }
+
+    private function baseTypes(): array
+    {
+        return [
+            ['int', 'int'],
+            ['integer', 'integer'],
+            ['float', 'float'],
+            ['array', 'array'],
+            ['object', 'object'],
+            ['DateTime', 'dateTime']
+        ];
     }
 
     /**
      * @test
+     * @dataProvider setterTypesProvider
      */
-    public function getTypeBySetter()
+    public function getTypeBySetter(string $expected, string $propertyName)
     {
         $typeReader = new TypeHintReader(
             new \ReflectionClass(OnlySetterParameters::class)
         );
 
-        $this->assertEquals('int', $typeReader->getTypeName('int'));
-        $this->assertEquals('integer', $typeReader->getTypeName('integer'));
-        $this->assertEquals('float', $typeReader->getTypeName('float'));
-        $this->assertEquals('array', $typeReader->getTypeName('array'));
-        $this->assertEquals('object', $typeReader->getTypeName('object'));
-        $this->assertEquals('DateTime', $typeReader->getTypeName('dateTime'));
-        $this->assertEquals(
-            'Thr\OnlySetterParameters',
-            $typeReader->getTypeName('onlySetterParameters')
+        $typeName = $typeReader->getTypeName($propertyName);
+        $this->assertEquals($expected, $typeName);
+    }
+
+    public function setterTypesProvider(): array
+    {
+        $types = $this->baseTypes();
+        array_push(
+            $types,
+            ['Thr\OnlySetterParameters', 'onlySetterParameters']
         );
+
+        return $types;
     }
 
     /**
