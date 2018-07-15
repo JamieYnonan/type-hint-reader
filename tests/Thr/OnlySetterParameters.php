@@ -12,7 +12,6 @@ class OnlySetterParameters
     private $integer;
     private $float;
     private $array;
-    private $object;
     private $dateTime;
     private $onlySetterParameters;
     private $mixed;
@@ -47,14 +46,6 @@ class OnlySetterParameters
     public function setArray(?array $array): void
     {
         $this->array = $array;
-    }
-
-    /**
-     * @param object $object
-     */
-    public function setObject(?\object $object): void
-    {
-        $this->object = $object;
     }
 
     /**

@@ -30,8 +30,7 @@ class TypeHintReaderTest extends TestCase
             OnlyConstructorParameters::class
         );
 
-        $typeName = $typeReader->getTypeName($propertyName);
-        $this->assertEquals($expected, $typeName);
+        $this->assertEquals($expected, $typeReader->getTypeName($propertyName));
     }
 
     public function constructorTypesProvider(): array
@@ -52,7 +51,6 @@ class TypeHintReaderTest extends TestCase
             ['integer', 'integer'],
             ['float', 'float'],
             ['array', 'array'],
-            ['object', 'object'],
             ['DateTime', 'dateTime']
         ];
     }
@@ -67,8 +65,7 @@ class TypeHintReaderTest extends TestCase
             new \ReflectionClass(OnlySetterParameters::class)
         );
 
-        $typeName = $typeReader->getTypeName($propertyName);
-        $this->assertEquals($expected, $typeName);
+        $this->assertEquals($expected, $typeReader->getTypeName($propertyName));
     }
 
     public function setterTypesProvider(): array
@@ -125,7 +122,6 @@ class TypeHintReaderTest extends TestCase
             $typeReaderConstruct->typeAllowNull('onlyConstructorParameters')
         );
         $this->assertTrue($typeReaderSetter->typeAllowNull('array'));
-        $this->assertTrue($typeReaderSetter->typeAllowNull('object'));
     }
 
     /**
@@ -145,6 +141,5 @@ class TypeHintReaderTest extends TestCase
             $typeReaderConstruct->typeIsBuiltin('onlyConstructorParameters')
         );
         $this->assertTrue($typeReaderSetter->typeIsBuiltin('array'));
-        $this->assertFalse($typeReaderSetter->typeIsBuiltin('object'));
     }
 }

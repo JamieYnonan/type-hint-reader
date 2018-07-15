@@ -8,7 +8,6 @@ class OnlyConstructorParameters
     private $integer;
     private $float;
     private $array;
-    private $object;
     private $dateTime;
     private $onlyConstructorParameters;
     private $mixed;
@@ -18,7 +17,6 @@ class OnlyConstructorParameters
         \integer $integer,
         float $float,
         array $array,
-        \object $object,
         \DateTime $dateTime,
         ?OnlyConstructorParameters $onlyConstructorParameters,
         $mixed
@@ -27,7 +25,6 @@ class OnlyConstructorParameters
         $this->integer = $integer;
         $this->float = $float;
         $this->array = $array;
-        $this->object = $object;
         $this->dateTime = $dateTime;
         $this->onlyConstructorParameters = $onlyConstructorParameters;
         $this->mixed = $mixed;
