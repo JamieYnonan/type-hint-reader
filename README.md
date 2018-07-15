@@ -9,6 +9,9 @@ Type hint reader for property via setter or constructor.
 ## Esp
 Lector de type hint de propiedades a travéz setter o constructor.
 
-## Eng
+## Ita
 Lettore di Type hint dei property tramite setter o constructor.
+
+### Api Doc
+https://jamieynonan.github.io/type-hint-reader/
 
